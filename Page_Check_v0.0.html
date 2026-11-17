@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Page Check v0.0</title>
+<style>body{margin:0;padding:24px;background:#222;color:#fff;font:18px -apple-system,system-ui,sans-serif}p{margin:10px 0}</style>
+</head><body>
+<h2>Page Check v0.0</h2>
+<p>1. HTML + CSS loaded: YES (you can read this)</p>
+<p id="js">2. JavaScript: NOT RUN</p>
+<p id="wl">3. Wake Lock API: ?</p>
+<p id="dvh">4. dvh units: ?</p>
+<p id="size">5. Window size: ?</p>
+<p id="sa">6. Standalone (Home Screen): ?</p>
+<p id="err">7. Errors: none</p>
+<script>
+window.onerror=function(m){document.getElementById('err').textContent='7. Errors: '+m;};
+document.getElementById('js').textContent='2. JavaScript: RUNNING';
+document.getElementById('wl').textContent='3. Wake Lock API: '+(('wakeLock' in navigator)?'available':'not available');
+document.getElementById('dvh').textContent='4. dvh units: '+((window.CSS&&CSS.supports&&CSS.supports('height','100dvh'))?'supported':'not supported');
+document.getElementById('size').textContent='5. Window size: '+innerWidth+' x '+innerHeight;
+document.getElementById('sa').textContent='6. Standalone (Home Screen): '+(navigator.standalone?'yes':'no');
+</script></body></html>
